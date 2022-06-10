@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title> Ishu_carPrice.Dekho</title>
+
+    </head>
+    <body>
+        <h1> Selling Price of Used Cars Application</h1>
+        <hr> 
+        {% if result %}
+            <h1>The Present value of car is {{result}} Rs</h1> 
+        {% endif %}
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            Year: <input type="number" name="Year" required>
+            
+            Kms_driven: <input type="number" name="KMS" required>
+            Owners: <select name="Owners" required>
+                <option value="Test_drive_car"> Test_drive_car</option>
+                <option value="First Owner"> First_Owner</option>
+                <option value="Second Owner"> Second_Owner</option>
+                <option value="Third Owner"> Third_Owner</option>
+                <option value="Fouth & above Owners"> Fourth&Above</option>
+                </select>
+            Fuel_type: <select name="Fuel" required>
+                <option value="Petrol"> Petrol</option>
+                <option value="Diesel"> Diesel</option>
+                <option value="CNG"> CNG</option>
+                <option value="LPG"> LPG</option>
+                </select>
+            Dealer_or_Individual: <select name="Seller" required>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+                <option value="Trustmarks_dealer">Trustmarks_dealer</option>
+                </select>
+            Mileage: <input type="number" name="Mileage" required>
+            Engine_CC: <input type="number" name="Engine" required>
+            Power: <input type="number" name="Power" required>
+            Seats: <input type="number" name="Seats" required>
+            Transmission type: <select name="Transmission" required>
+                    <option value="Mannual">Manual Car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select>
+            <button type="submit ">Calculate the Selling Price</button>
+                
+
+        </form>
+    </body>
+</html>
